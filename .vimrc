@@ -13,6 +13,9 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Settings:
@@ -89,10 +92,12 @@ endif
 " Tagbar:
 let g:tagbar_width = 30
 
+" Fuzzy:
+let g:fzf_layout = {'down': '~25%'}
+
 " Mapping:
 map <C-n> :UndotreeToggle<CR>
 map <C-m> :UndotreeFocus<CR>
-map <C-o> :Ex<CR>
 
 let mapleader=","
 nnoremap <leader>h :wincmd h<CR>
@@ -106,3 +111,8 @@ nnoremap <leader>a :call DayNight()<CR>
 
 nnoremap <leader>b :Limelight<CR>
 nnoremap <leader>v :Limelight!<CR> 
+
+nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>e :source %<CR>
