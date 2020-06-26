@@ -116,3 +116,6 @@ nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>e :source %<CR>
+
+" Just for small tests while coding
+nnoremap <leader>t :exe '!gcc %:p' <bar> exe '!'.getcwd().'/a.out'<cr>
