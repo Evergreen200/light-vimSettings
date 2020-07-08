@@ -7,6 +7,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-syntastic/syntastic'
+Plug 'gruvbox-community/gruvbox'
+Plug 'jiangmiao/auto-pairs'
 
 " Functionality:
 Plug 'ycm-core/YouCompleteMe'
@@ -65,8 +67,19 @@ else
 endif
 endfunction      
 
-
+" TODO: Set Gruvbox as default 
 " Configurations:
+
+" AutoPairs:
+let g:AutoPairsFlyMode = 0
+let g:AutoPairsShortcutBackInsert = '<M-b>'
+" Isn't finished yet
+
+
+" YouCompleteMe:
+let g:ycm_clangd_uses_ycmd_caching = 0
+let g:ycm_clangd_binary_path = exepath("clangd")
+
 
 " Airline:
 let g:airline#extensions#tabline#enabled = 1
