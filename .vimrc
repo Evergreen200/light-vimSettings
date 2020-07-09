@@ -62,6 +62,10 @@ let g:airline_section_z = '%{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
 let g:airline_theme='base16_gruvbox_dark_hard'
 " Syntastic:
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -100,5 +104,6 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>e :source %<CR>
 
+nnoremap <leader>a :TagbarToggle<CR>
 " Just for small tests while coding
 nnoremap <leader>t :exe '!gcc %:p' <bar> exe '!'.getcwd().'/a.out'<cr>
