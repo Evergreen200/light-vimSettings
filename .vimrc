@@ -9,9 +9,13 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-syntastic/syntastic'
 Plug 'gruvbox-community/gruvbox'
 Plug 'jiangmiao/auto-pairs'
+Plug 'powerline/powerline'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-webdevicons'
 
 " Functionality:
 Plug 'ycm-core/YouCompleteMe'
+Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/limelight.vim'
@@ -61,6 +65,8 @@ let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_section_z = '%{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
 let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_powerline_fonts = 1
+
 " Syntastic:
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -78,7 +84,7 @@ if has ("persisten_undo")
 endif
 
 if !exists('g:undotree_WindowLayout')
-   let g:undotree_WindowLayout = 3
+   let g:undotree_WindowLayout = 3 
 endif
 " Tagbar:
 let g:tagbar_width = 30
@@ -104,6 +110,7 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>e :source %<CR>
 
-nnoremap <leader>a :TagbarToggle<CR>
+nnoremap <leader>T :TagbarToggle<CR>
+nnoremap <leader>a :NERDTreeToggle<CR>
 " Just for small tests while coding
 nnoremap <leader>t :exe '!gcc %:p' <bar> exe '!'.getcwd().'/a.out'<cr>
