@@ -77,6 +77,14 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" NERDTree:
+" opens nerdtree if no filename was entered
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" opens nerdtree if directory was opend
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd ' .argv()[0] | endif
+
 " UndoTree:
 if has ("persisten_undo")
     set undodir=$HOME."~/.vim/undodir"
@@ -112,5 +120,6 @@ nnoremap <leader>e :source %<CR>
 
 nnoremap <leader>T :TagbarToggle<CR>
 nnoremap <leader>a :NERDTreeToggle<CR>
+nnoremap <leader>s :NERDTreeFocus<CR>
 " Just for small tests while coding
 nnoremap <leader>t :exe '!gcc %:p' <bar> exe '!'.getcwd().'/a.out'<cr>
