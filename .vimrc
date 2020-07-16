@@ -114,7 +114,7 @@ nnoremap <leader>b :Limelight<CR>
 nnoremap <leader>v :Limelight!<CR> 
 
 nnoremap <leader>r :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :qall<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>e :source %<CR>
 
